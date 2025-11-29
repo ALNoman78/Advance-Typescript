@@ -3,7 +3,7 @@ let anything: any;
 
 anything === 'moule';
 
-(anything as string) // it's called type assertion
+//!! (anything as number) // it's called type assertion
 
 // todo Example type Assertion
 
@@ -23,3 +23,16 @@ console.log({ result })
 const result2 = kgToGmConverter('2 kg') as string; // it should be string it's called type Assertion
 // ! result [ better define ] when i'm sure about that it's string then i have to define that
 console.log({ result2 })
+
+
+// todo example
+
+type customError = {
+    message: string
+}
+
+try {
+
+} catch (error) {
+    console.log((error as customError).message)
+}   
