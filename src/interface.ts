@@ -49,3 +49,13 @@ const isAdmin: IsAdmin = false
 interface IUserWithRole extends IUser {
     role: "admin" | 'user'
 }
+
+
+// interface in Function
+
+interface IFriends {
+
+}
+
+
+const friends = ['A', 'b', 'c']
