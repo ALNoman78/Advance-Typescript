@@ -85,3 +85,7 @@ interface IFriends {
 }
 
 const friends: IFriends = ['A', 'B', 'C']
+
+
+
+// !! Best practice for Array and Function for Type Alias is the best option for that and for object Interface is the better option for that
