@@ -76,6 +76,8 @@ const sum: IAdd = (num1, num2) => {
 
 type Friends = string[]
 
+const students: Friends = ['Noman', 'Moule', 'Unknown']
+
 
 
 // TODO indexing with interface
