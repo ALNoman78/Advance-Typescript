@@ -53,9 +53,35 @@ interface IUserWithRole extends IUser {
 
 // interface in Function
 
-interface IFriends {
+type Add = (num1: number, num2: number) => number
 
+const add: Add = (num1, num2) => {
+    const sum = num1 + num2
+    return sum;
+}
+
+// interface start
+
+interface IAdd {
+    (num1: number, num2: number): number
 }
 
 
-const friends = ['A', 'b', 'c']
+const sum: IAdd = (num1, num2) => {
+    const total = num1 + num2
+    return total
+}
+
+// todo with interface
+
+type Friends = string[]
+
+
+
+// TODO indexing with interface
+
+interface IFriends {
+    [index: number]: string
+}
+
+const friends: IFriends = ['A', 'B', 'C']
