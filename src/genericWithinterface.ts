@@ -53,7 +53,7 @@ const mainUserList: TGenericArray<IMainUser> = [
 console.log(mainUserList)
 
 
-interface Developer<T> {
+interface Developer<T, X = null> {
     name: string;
     salary: number;
     device: {
@@ -61,7 +61,8 @@ interface Developer<T> {
         model: string;
         releasedYear: string;
     };
-    smartWatch: T
+    smartWatch: T,
+    bike?: X
 }
 
 interface NonBrandWatch {
@@ -69,7 +70,12 @@ interface NonBrandWatch {
     stopWatch: boolean
 }
 
-const poorDeveloper: Developer<NonBrandWatch> = {
+interface BikeMode {
+    brand: string;
+    engineCapacity: string
+}
+
+const poorDeveloper: Developer<NonBrandWatch, BikeMode> = {
     name: 'Unknown Person',
     salary: 20,
     device: {
@@ -80,6 +86,10 @@ const poorDeveloper: Developer<NonBrandWatch> = {
     smartWatch: {
         heartRate: '70',
         stopWatch: true
+    },
+    bike: {
+        brand: 'Royal Enfield',
+        engineCapacity: '200cc'
     }
 }
 
@@ -104,5 +114,18 @@ const richDeveloper: Developer<BrandedWatch> = {
         callSupport: true,
         calculator: true,
         aiFeature: true,
-    }
+    },
+    bike: null
 }
+
+console.log('poor developer', poorDeveloper)
+console.log('rich developer', richDeveloper)
+
+
+// todo like function reference
+
+const add = (num1: number, num2: number = 0) => {
+    return num1 + num2
+}
+
+add(2)
