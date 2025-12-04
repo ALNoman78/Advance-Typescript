@@ -64,10 +64,12 @@ interface Developer<T> {
     smartWatch: T
 }
 
-const poorDeveloper: Developer<{
+interface NonBrandWatch {
     heartRate: string;
     stopWatch: boolean
-}> = {
+}
+
+const poorDeveloper: Developer<NonBrandWatch> = {
     name: 'Unknown Person',
     salary: 20,
     device: {
@@ -81,13 +83,15 @@ const poorDeveloper: Developer<{
     }
 }
 
-
-const richDeveloper: Developer<{
+interface BrandedWatch {
     heartRate: string;
     callSupport: boolean,
     calculator: boolean,
     aiFeature: boolean,
-}> = {
+}
+
+
+const richDeveloper: Developer<BrandedWatch> = {
     name: 'MR known',
     salary: 22,
     device: {
