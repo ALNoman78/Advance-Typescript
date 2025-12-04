@@ -51,3 +51,54 @@ const mainUserList: TGenericArray<IMainUser> = [
 ]
 
 console.log(mainUserList)
+
+
+interface Developer<T> {
+    name: string;
+    salary: number;
+    device: {
+        brand: string;
+        model: string;
+        releasedYear: string;
+    };
+    smartWatch: T
+}
+
+const poorDeveloper: Developer<{
+    heartRate: string;
+    stopWatch: boolean
+}> = {
+    name: 'Unknown Person',
+    salary: 20,
+    device: {
+        brand: 'Apple',
+        model: 'M3',
+        releasedYear: '2024'
+    },
+    smartWatch: {
+        heartRate: '70',
+        stopWatch: true
+    }
+}
+
+
+const richDeveloper: Developer<{
+    heartRate: string;
+    callSupport: boolean,
+    calculator: boolean,
+    aiFeature: boolean,
+}> = {
+    name: 'MR known',
+    salary: 22,
+    device: {
+        brand: 'hp',
+        model: 'AOSDFH2312312',
+        releasedYear: '2021'
+    },
+    smartWatch: {
+        heartRate: '65',
+        callSupport: true,
+        calculator: true,
+        aiFeature: true,
+    }
+}
