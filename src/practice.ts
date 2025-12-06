@@ -6,6 +6,7 @@ interface GenericDeveloper<X, T = null> {
         model: string;
         releasedYear: string;
     };
+    isAdmin: 'admin' | 'user'
     smartWatch: X;
     bike?: T
 }
@@ -27,6 +28,7 @@ const Developer: GenericDeveloper<SmartWatch, bike> = {
         brand: 'Inter',
         releasedYear : '2020'
     },
+    isAdmin: 'admin',
     smartWatch: {
         waterProof: true,
     }
