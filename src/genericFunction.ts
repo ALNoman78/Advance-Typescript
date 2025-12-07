@@ -56,4 +56,30 @@ const res2 = createArrWithTupleGeneric(23, {
 })
 
 
-console.log(res2)
+// console.log(res2)
+
+// todo addCourse 
+
+const addCourseToEnroll = <T>(studentInfo: T) => {
+    return [{
+        courseName: 'Next level Development',
+        ...studentInfo
+    }]
+}
+
+const student = {
+    id: 123,
+    name: 'Noman',
+    hasPen: true,
+}
+
+const student2 = {
+    id: 12,
+    name: 'person2',
+    hasCar: true,
+    isMarried: true
+}
+
+const res = addCourseToEnroll(student2)
+
+console.log(res);
