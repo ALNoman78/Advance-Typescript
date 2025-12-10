@@ -48,13 +48,13 @@ const mainFunction = <T>(param1: T) => {
     return [param1]
 }
 
-// console.log(mainFunction('abdulla al noman mondol'))
+console.log(mainFunction('abdulla al noman mondol'))
 
-// console.log(mainFunction({
-//     name: 'abudllah al noman ',
-//     number: '01318-9969328',
-//     id: 21
-// }))
+console.log(mainFunction({
+    name: 'abudllah al noman ',
+    number: '01318-9969328',
+    id: 21
+}))
 
 const secFunction = <T>(param2: T) => {
     return [{
