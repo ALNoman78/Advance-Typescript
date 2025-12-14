@@ -1,43 +1,62 @@
-// todo What is key of Operator?
+// todo What is key of operator
+// keyof : type of operator
 
-//  keyof : type operator
-
-type RichPeoplesVehicle = {
+type RichPeople = {
     car: string;
     bike: string;
     cng: string;
 }
 
-type MyVehicle1 = 'bike' | 'car' | 'cng'
+type MyVehicle = 'car' | 'bike' | 'cng'
 
-type MyVehicle2 = keyof RichPeoplesVehicle;
+type MyVehicle2 = keyof RichPeople
 
 const myVehicle: MyVehicle2 = "bike"
 
-// console.log(myVehicle)
+// todo Now what is key of constant 
 
-// TODO User object 
-
-const user = {
-    id: 12,
-    name: 'Moule',
+const user: User = {
+    id: 22,
+    name: "Noman",
     address: {
-        city: 'Barguna'
-    },
+        city: "Chittagong"
+    }
 }
 
-// const myName = user.id
 
-const myName = user['name']
-const myId = user['id']
-const myAddress = user['address']
+// const myId = user.id
 
+// const myId2 = user["id"]
+// const myName = user["name"]
+// const address = user["address"]
 
-// console.log({ myName, myAddress, myId })
+// console.log({ myName, myId2, address })
 
-const getResultFromObj = (obj: object, key: string) => {
+type User = {
+    id: number,
+    name: string,
+    address: {
+        city: string
+    }
+}
+
+const getPropertyFromObject = <X>(obj: X, key: keyof X) => { // here i am user keyof User 
     return obj[key]
 }
 
-const result = getResultFromObj(user, 'name')
-console.log(result)
+const result1 = getPropertyFromObject(user, "name")
+
+const product = {
+    brand: 'Hp'
+}
+
+const student = {
+    id: 123,
+    class: 'four'
+}
+
+const result2 = getPropertyFromObject(product, "brand")
+
+const studentRes = getPropertyFromObject(student, "id")
+
+console.log(result1, result2, studentRes)
