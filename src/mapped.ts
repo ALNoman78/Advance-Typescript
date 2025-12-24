@@ -11,3 +11,4 @@ const arrayOfStringUsingMap: string[] = arrOfNumber.map((num) => num.toString() 
 console.log(arrOfNumber)
 
 // todo exploring Mapped in typescript
+// todo practice project completed
