@@ -33,3 +33,18 @@ const area1: Area<{ height: string, width: number }> = {
     height: "50",
     width: 40,
 }
+
+
+
+// Practice session Start
+
+type NewArea<T> = {
+    [i in keyof T]: T[i]
+}
+
+const area3: NewArea<{ height: string; width: number }> = {
+    height: "49",
+    width: 32
+}
+
+console.log(area3)
