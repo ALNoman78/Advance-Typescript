@@ -1,22 +1,22 @@
 // use as const instead of Enum
 
-const UserRole = {
-    Admin : "Admin",
-    Editor : "Editor",
-    Viewer : "Viewer"
+const UserRoles = {
+    Admin: "ADMIN",
+    Editor: "EDITOR",
+    Viewer: "VIEWER"
 } as const;
 
-/* Use 
-1. keyof and 
-2. typeof operator
 
-*/
+// todo for [ as const ] => use keyof and typeof operator
 
-const canEdit = (role : keyof typeof UserRole) => {
-    if (role === UserRole.Admin || role === UserRole.Editor) {
+
+const canEdit = (role: (typeof UserRoles)[keyof typeof UserRoles]) => {
+    if (role === UserRoles.Admin || role === UserRoles.Editor) {
         return true;
-    }
-    else{
+    } else {
         return false;
     }
 }
+
+const isPermit = canEdit('ADMIN')
+console.log(isPermit);
