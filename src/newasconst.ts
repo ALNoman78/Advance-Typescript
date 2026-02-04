@@ -7,7 +7,7 @@ const UserRoles = {
 } as const;
 
 
-// todo for [ as const ] => use keyof and typeof operator
+// todo for [ as const ] => use keyof and typeof operator [ on the other hand it's only working for the typescript mapped functino]
 
 
 const canEdit = (role: (typeof UserRoles)[keyof typeof UserRoles]) => {
