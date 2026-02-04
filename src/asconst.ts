@@ -15,7 +15,7 @@ const UserRole = {
     Viewer: "VIEWER"
 } as const;
 
-const canEdit = (role: (typeof UserRole[keyof typeof UserRole])) => {
+const canEdit = (role: (typeof UserRole)[keyof typeof UserRole]) => {
     if (role === UserRole.Admin || role === UserRole.Editor) {
         return true;
     } else {
